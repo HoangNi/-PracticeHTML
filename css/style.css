@@ -51,7 +51,6 @@ body {
     border-color: rgb(219, 139, 219);
     box-shadow: inset 0 0 20px rgb(240, 63, 240), 0 0 20px rgb(138, 54, 138);
     outline: none;
-    text-shadow: 1px 1px 2px #427388;
 }
 
 /* header */
@@ -75,6 +74,10 @@ header {
     text-decoration: none;
     padding-left: 90px;
     color: rgb(219, 139, 219);
+}
+
+#logo h1 a:hover {
+    text-shadow: 1px 1px 8px rgb(240, 63, 240);
 }
 
 #menu {
@@ -111,14 +114,14 @@ nav li a:hover {
     overflow: hidden;
 }
 
-.menu {
+.slider__menu {
     position: absolute;
     z-index: 900;
     width: 100%;
     bottom: 0;
 }
 
-.menu label {
+.slider__menu label {
     display: inline-block;
     width: 12px;
     height: 12px;
@@ -154,20 +157,21 @@ nav li a:hover {
     background-image: url('../image/slider3.jpg');
 }
 
-.intro {
+.slider__intro {
     position: absolute;
     z-index: 902;
-    top: 32%;
-    left: 24%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
-.intro h2 {
+.slider__intro h2 {
     color: #ffffff;
     font-size: 52px;
 }
 
-.intro marquee {
+.slider__intro h4 {
     color: #ffffff;
 }
 
@@ -186,6 +190,11 @@ nav li a:hover {
     float: left;
     width: 50%;
     margin-top: 50px;
+}
+
+.about__avatar img {
+    width: 80%;
+    height: 80%;
 }
 
 .about__describition {
@@ -216,15 +225,18 @@ nav li a:hover {
 .service__card {
     display: inline-table;
     width: 26%;
-    margin: 10px 10px 5px 0;
+    margin: 10px 10px 10px 0;
     padding: 8px;
     transition: 1s ease-in-out;
 }
 
 .service__card:hover {
-    box-shadow: 1px 1px 1px 1px rgb(148, 122, 148);
+    box-shadow: 0px 0px 10px 1px rgba(148, 122, 148, 1);
     transition: 0.5s ease-in-out;
     border-radius: 10px;
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    -ms-transform: scale(1.05, 1.05);
     transform: scale(1.05, 1.05);
 }
 
@@ -260,7 +272,7 @@ nav li a:hover {
 }
 
 .photos__col {
-    margin-top: 5px;
+    margin-top: 10px;
     display: flex;
 }
 
@@ -270,14 +282,14 @@ nav li a:hover {
 }
 
 .photos__col-left {
-    margin-right: 8px;
+    margin-right: 14px;
     width: 60%;
     position: relative;
 }
 
 .photos__col-right {
     position: relative;
-    margin-right: 8px;
+    margin-right: 14px;
     width: 40%;
 }
 
@@ -314,14 +326,14 @@ nav li a:hover {
 .blog_card {
     display: inline-table;
     width: 26%;
-    margin: 0 8px 0 8px;
+    margin: 0 8px 10px 8px;
     padding: 10px 10px 30px 10px;
     text-align: left;
 }
 
 .blog_card:hover {
     border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px rgb(148, 122, 148);
+    box-shadow: 0px 0px 10px 1px rgba(148, 122, 148, 1);
 }
 
 .blog_card img {
@@ -393,7 +405,7 @@ nav li a:hover {
 }
 
 .contact__describition img {
-    height: 130px;
+    height: 150px;
     width: 150px;
     border-radius: 50%;
     box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, .2);
@@ -421,93 +433,53 @@ footer h2 {
 
 @media screen and (max-width:768px) {
     body {
-        width: 100%;
         line-height: 1.4em;
-        font-size: 14px;
+        font-size: 12px;
     }
     .description {
         width: 90%;
     }
     .title {
-        font-size: 34px;
+        font-size: 30px;
     }
     .button {
-        width: 150px;
+        width: 140px;
         height: 40px;
         margin-top: 10px;
-    }
-    header {
-        width: 100%;
-        position: absolute;
-        z-index: 901;
-        top: 0;
     }
     #logo {
         width: 100%;
         text-align: center;
-        margin: 0;
     }
     #logo h1 a {
-        font-size: 24px;
-        color: #fff;
-        text-transform: uppercase;
-        text-decoration: none;
-        padding-left: 90px;
-    }
-    #logo h1 a:hover {
-        color: rgb(219, 139, 219);
+        font-size: 22px;
+        padding: 0;
     }
     #menu {
-        float: unset;
         width: 100%;
-        margin-top: 10px;
-        text-align: center;
+        float: none;
     }
     nav li {
         display: inline;
-        padding: 16px;
-    }
-    nav li a {
-        text-transform: uppercase;
-        color: #fff;
-        text-decoration: none;
-        color: rgb(219, 139, 219);
+        margin-right: 10px;
     }
     nav li a:hover {
         color: rgb(219, 139, 219);
     }
     #slider {
         height: 350px;
-        width: 100%;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
     }
-    .slide {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        background-size: cover;
-        text-align: center;
-    }
-    .intro {
-        padding: 20px;
-        position: absolute;
-        z-index: 902;
-        top: 30%;
-        left: 0;
-        text-align: center;
-    }
-    .intro h2 {
+    .slider__intro h2 {
         color: #ffffff;
-        font-size: 30px;
+        font-size: 28px;
+        line-height: 0.8em;
+        padding-top: 50px;
     }
-    .intro h4 {
+    .slider__intro h4 {
         color: #ffffff;
+        visibility: hidden;
     }
     .about {
-        height: auto;
         padding: 20px 0 30px 0;
         text-align: center;
     }
@@ -519,19 +491,16 @@ footer h2 {
         width: 100%;
     }
     .about__describition h2 {
-        font-size: 34px;
+        font-size: 30px;
     }
     .about__describition p {
         width: 100%;
         text-align: left;
     }
     .service {
-        height: auto;
         padding: 30px 0 30px 0;
-        text-align: center;
     }
     .service__card {
-        display: inline-table;
         width: 90%;
         margin: 5px 0 0 0;
         padding: 4px;
@@ -547,12 +516,14 @@ footer h2 {
     .photos__col {
         display: inline;
     }
+    .photos img {
+        height: 180px;
+        width: 100%;
+    }
     .photos__col-left {
-        height: 160px;
         width: 100%;
     }
     .photos__col-right {
-        height: 160px;
         width: 100%;
     }
     .photos__col h2 {
@@ -591,8 +562,6 @@ footer h2 {
         width: 100%;
     }
     .contact__describition h3 {
-        text-transform: uppercase;
-        color: #585858;
         font-size: 20px;
     }
     .contact__sendmess {
@@ -611,9 +580,8 @@ footer h2 {
         width: 200px;
     }
     .contact__describition img {
-        border-radius: 50%;
         height: 100px;
-        width: 120px;
+        width: 100px;
     }
 }
 
@@ -659,23 +627,13 @@ footer h2 {
     #slider {
         height: 450px;
     }
-    .menu {
-        position: absolute;
-        z-index: 900;
-        width: 100%;
-        bottom: 0;
+    .slider__intro h2{
+        font-size: 32px;
     }
-    .intro {
-        position: absolute;
-        z-index: 902;
-        top: 32%;
-        left: 10%;
-        text-align: center;
+    .slider__intro h4{
+        visibility: inherit;
     }
-    .intro h2 {
-        color: #ffffff;
-        font-size: 46px;
-    }
+    
     /* end_slider */
     /* about */
     .about {
@@ -734,13 +692,13 @@ footer h2 {
     }
     .photos__col-left {
         height: 220px;
-        margin-right: 4px;
+        margin-right: 10px;
         width: 60%;
         position: relative;
     }
     .photos__col-right {
         position: relative;
-        margin-right: 4px;
+        margin-right: 10px;
         height: 220px;
         width: 40%;
     }
